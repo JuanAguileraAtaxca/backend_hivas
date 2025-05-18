@@ -11,6 +11,12 @@ import {
 const db = new Sequelize(POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
     host: POSTGRES_SERVER, 
     dialect: 'postgres', 
+    dialectOptions: {
+        ssl: {
+        require: true,    // Obliga a usar SSL
+        rejectUnauthorized: false  // Ignora errores de certificado autofirmado (necesario en Render)
+        }
+    },
     port: POSTGRES_PORT, 
     define: {
         timestamps: false
