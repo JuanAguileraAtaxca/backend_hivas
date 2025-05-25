@@ -55,7 +55,7 @@ export const obtenerLeyendaPorNombre = async (req, res) => {
         const leyendas = await leyenda.findAll({
             where: {
                 titulo: {
-                    [Op.like] : `%${nombre}%`, 
+                    [Op.iLike] : `%${nombre}%`, 
                 }
             }, 
             include: [
