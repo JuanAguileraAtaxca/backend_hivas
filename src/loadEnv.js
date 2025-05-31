@@ -1,12 +1,13 @@
 
+// importar dotenv para cargar las variables de entorno
 import { config } from "dotenv";
 
 config(".env");
 
-// server
+// variable de entorno para el puerto del server
 export const PORT_SERVER  = process.env.PORT_SERVER;
 
-// db server
+// variables de entorno para la db
 export const POSTGRES_DB = process.env.POSTGRES_DB;
 export const POSTGRES_USER = process.env.POSTGRES_USER;
 export const POSTGRES_PASSWORD = process.env.POSTGRES_PASSWORD;
